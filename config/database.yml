@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: telos2_production
-  #username: <%= ENV['TELOS2_DATABASE_USERNAME'] %>
-  #password: <%= ENV['TELOS2_DATABASE_PASSWORD'] %>
+  username: <%= ENV['TELOS2_DATABASE_USERNAME'] %>
+  password: <%= ENV['TELOS2_DATABASE_PASSWORD'] %>
