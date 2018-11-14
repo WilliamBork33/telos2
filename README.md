@@ -4,12 +4,15 @@
 - Install it with `sudo apt-get install postgresql` or download here - `https://www.postgresql.org/download/`
 - Run PostgreSQL with `sudo -u postgres psql`.
 - Create a new database role for this application using SQL syntax `CREATE ROLE exampleRole WITH CREATEDB LOGIN PASSWORD 'examplePassword';`
+* NOTE: Don't actually use `exampleRole` and `examplePassword`. They are just placeholders for example. Create your own and use in place of the placeholders.
 - Create a new database for this application using SQL syntax `CREATE DATABASE "exampleDatabase_development" owner "exampleRole";`
 
 # CONFIGURE APP FOR DATABASE
-- Open `database.yml` file to find and uncomment `username:`, `password:`, and `host: localhost`.
-- Add your role and password like this `username: exampleRole`, `password: examplePassword`.
-- Optionally, you may add `username: exampleRole`, `password: examplePassword` to each individual database environment - development, test, and production - if you create a different database for each one. Read here for more details - `https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres`
+- Open `config/database.yml` file to find `username: <%= ENV['POSTGRESQL_USERNAME'] %>` and `password: <%= ENV['POSTGRESQL_PASSWORD'] %>`. These are used to connect to the PostgreSQL role and password you created in SETUP DATABASE.
+- Find the `config/example_local_env.yml` file. Rename it to `local_env.yml`. It will hold your enviroment variables.
+- In `local_env.yml` add your own role and password that you created in SETUP DATABASE like this: `POSTGRESQL_USERNAME: 'exampleRole'` and `POSTGRESQL_PASSWORD: 'examplePassword'`.
+- In `local_env.yml` add your own role and password for you production database like this: `PRODUCTION_DATABASE_USERNAME: 'exampleRole'` and `PRODUCTION_DATABASE_PASSWORD: 'examplePassword`.
+* NOTE: You should use create a different set of roles and passwords for your production database (different from development and test databases). You may specify different roles and passwords for each individual database environment - development, test, and production - if you create a different database for each one. Read here for more details - `https://www.digitalocean.com/community/tutorials/how-to-setup-ruby-on-rails-with-postgres`
 
 # START APP LOCALLY
 - `bundle install`

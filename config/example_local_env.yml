@@ -1,0 +1,7 @@
+# These are the development and test credentials
+POSTGRESQL_USERNAME: 'exampleRole'
+POSTGRESQL_PASSWORD: 'examplePassword'
+
+# This is the production database details
+PRODUCTION_DATABASE_USERNAME: 'exampleRole'
+PRODUCTION_DATABASE_PASSWORD: 'examplePassword'
