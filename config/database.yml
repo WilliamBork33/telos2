@@ -24,17 +24,15 @@ default: &default
 development:
   <<: *default
   database: telos2_development
-  #username: telos2
-  #password: telos2
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  username: telos2
+  username: <%= ENV['POSTGRESQL_USERNAME'] %>
 
   # The password associated with the postgres role (username).
-  password: telos2
+  password: <%= ENV['POSTGRESQL_PASSWORD'] %>
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -60,8 +58,6 @@ development:
 test:
   <<: *default
   database: telos2_test
-  #username: telos2
-  #password: telos2
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,5 +81,5 @@ test:
 production:
   <<: *default
   database: telos2_production
-  #username: telos2
+  #username: <%= ENV['TELOS2_DATABASE_USERNAME'] %>
   #password: <%= ENV['TELOS2_DATABASE_PASSWORD'] %>
