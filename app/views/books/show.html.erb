@@ -1,0 +1,12 @@
+
+
+
+<div class="col-md-8">
+    <% if @user.books.any? %>
+      <h3>Microposts (<%= @user.books.count %>)</h3>
+      <ol class="books">
+        <%= render @books %>
+      </ol>
+      <%= will_paginate @books %>
+    <% end %>
+  </div>

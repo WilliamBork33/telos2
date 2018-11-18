@@ -25,17 +25,40 @@ User.create!(
   password_confirmation: "adminn",
   admin: true
   )
+
+  
     
 33.times do |n|
 name  = Faker::Name.name
-email = "example#{n+1}@example.com"
-address = "#{n+1} Example St."
+email = Faker::Internet.email
+address = Faker::Address.street_address
 phone = rand.to_s[2..11]
 password = "example"
-User.create!(
-    name:                  name,
-    email:                 email,
-    address:               address,
-    password:              password,
-    password_confirmation: password)
+
+  User.create!(
+      name:                  name,
+      email:                 email,
+      address:               address,
+      password:              password,
+      password_confirmation: password)
+end
+
+
+
+users = User.order(:created_at).take(6)
+5.times do |n|
+title       = Faker::Book.title
+description = Faker::Lorem.sentence(5)
+author      = Faker::Book.author
+seller      = @user.user_id
+price       = Faker::Number.decimal(2)
+user_id     = @user.user_id
+
+  users.each { |user| user.books.create!(
+    title:               title,
+    description:         description,
+    author:              author,
+    seller:              seller,
+    price:               price,
+    user_id:             user_id)}
 end

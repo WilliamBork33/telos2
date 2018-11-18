@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+ 
   #root 'welcome#index'
   root 'static_pages#home'
   get  '/about',   to: 'static_pages#about'
@@ -8,6 +8,12 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+
+  
+  get 'sessions/new'
+
+  get 'books/new'
+  get 'books/show'
 
   resources :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
