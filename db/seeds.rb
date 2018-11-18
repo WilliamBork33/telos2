@@ -18,7 +18,7 @@ User.create!(
 
 User.create!(
   name:                  "admin",
-  email:                 "admin@adminn.com",
+  email:                 "admin@admin.com",
   address:               "123 Admin St.",
   phone:                 "1234567890",
   password:              "adminn",
