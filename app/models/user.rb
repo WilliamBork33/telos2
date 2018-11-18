@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :books
+  
   #Before saving, change new user email to lowercase
   before_save { self.email = email.downcase }
 

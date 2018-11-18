@@ -1,0 +1,29 @@
+
+
+
+<div class="col-md-8">
+    <% if @user.books.any? %>
+      <h3>Books (<%= @user.books.price %>)</h3>
+      <ol class="books">
+        <%= render @user.books.title %>
+      </ol>
+    <% end %>
+  </div>
+
+
+<table class="table is-bordered is-striped is-narrow">
+  <tr>
+    <th>Product</th>
+    <th>Seller</th>
+    <th>Date Posted</th>
+    <th>Amount</th>
+    <th>Action</th>
+  </tr>
+<% @books.each do |book| %> 
+  <tr>
+    <td><%= book.title %></td>
+    
+    
+  </tr>
+<% end %>
+</table>

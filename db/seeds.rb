@@ -7,6 +7,53 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+
+
+  
+    
+33.times do |n|
+name  = Faker::Name.name
+email = Faker::Internet.email
+address = Faker::Address.street_address
+phone = rand.to_s[2..11]
+password = "example"
+
+  User.create!(
+      name:                  name,
+      email:                 email,
+      address:               address,
+      password:              password,
+      password_confirmation: password)
+end
+
+
+
+@users = User.order(:created_at).take(5)
+5.times do |n|
+title       = Faker::Book.title
+description = Faker::Lorem.sentence(5)
+author      = Faker::Book.author
+seller      = @users
+price       = Faker::Number.decimal(2)
+user_id     = @users
+
+
+  @users.each { |user| user.books.create!(
+    title:               title,
+    description:         description,
+    author:              author,
+    seller:              seller,
+    price:               price,
+    user_id:             user_id) }
+end
+
+
+
+
+
+
+
+
 User.create!(
   name:                  "faker",
   email:                 "faker@faker.com",
@@ -18,24 +65,10 @@ User.create!(
 
 User.create!(
   name:                  "admin",
-  email:                 "admin@adminn.com",
+  email:                 "admin@admin.com",
   address:               "123 Admin St.",
   phone:                 "1234567890",
   password:              "adminn",
   password_confirmation: "adminn",
   admin: true
   )
-    
-33.times do |n|
-name  = Faker::Name.name
-email = "example#{n+1}@example.com"
-address = "#{n+1} Example St."
-phone = rand.to_s[2..11]
-password = "example"
-User.create!(
-    name:                  name,
-    email:                 email,
-    address:               address,
-    password:              password,
-    password_confirmation: password)
-end
