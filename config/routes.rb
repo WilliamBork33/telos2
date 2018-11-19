@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   
   get 'sessions/new'
 
+  get 'books/', to: 'books#index'
   get 'books/new'
   get 'books/show'
 

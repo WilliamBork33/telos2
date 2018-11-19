@@ -12,9 +12,18 @@
 
 <div class="col-md-8">
     <% if @user.books.any? %>
-      <h3>Books (<%= @user.books.ids %>)</h3>
+      <h3>Books IDs (<%= @user.books.ids %>)</h3>
       <ol class="books">
-        <%= @books.ids %>
+        <%= @user.books.ids %>
+
+        <br>
+
+        <%= @user.books.find(params[:id]) %>
+        <%= @books1 %>
+        <%= @books2 %>
+        <%= @books3 %>
+        <%= @books4 %>
+        
       </ol>
     <% end %>
   </div>
@@ -30,7 +39,7 @@
     <th>Price</th>
     <th>Date of Listing</th>
   </tr>
-<% @books.each do |book| %> 
+<% @user.books.each do |book| %> 
   <tr>
     <td><%= book.title %></td>
     <td><%= book.description %></td>
