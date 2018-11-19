@@ -1,30 +1,49 @@
 class BooksController < ApplicationController
   
   def index
-    @testbook = Book.last.title
-    @testbook1 = Book.first.title
-    @testbook2 = Book.exists?(id: [1, 4, 8])
+    @a = User.find([35])
+    @b = User.find_by(id: '35')
+    @c = Book.find_by(id: '27')
+    #@d = User.all(params[:id])
 
+   
+    #User.find(params[:id]).destroy
 
     #@users = User.paginate(page: params[:page])
-      #@user = User.find(params[1])
-      #@user = User.first
-    ##@books = Book.all
-    ##books = Book.all
-      #@asfd = User.find(params[:id])
-    ##@asdf = User.find_by(id: session[:user_id])
-      #@asdf = User.find_by(email: params[:name][:email])
-    
+    #@user = User.all
+   
+    #@books = Book.all
+    #@book = Book.paginate(page: params[:page])
+
+    #@bookss = User.all
+    #@testbook = Book.last.user_id
+    #@testbook1 = Book.first.title
+    #@testbook2 = Book.exists?(id: [1, 4, 8])
+
   end
 
   def show
-    #@user = User.find(params[:id])
-    @users = User.paginate(page: params[:page])
-    #@books = @user.books.paginate(page: params[:page])
+    
+    @user = User.find(params[:id])
+    @book = Book.find(params[:id])
   end
   
   def new
+    @book = Book.new
+   
   end
+
+  def create
+   
+    @book = Book.new(book_params)    # Not the final implementation!
+    @book.user_id = current_user.id
+    if @book.save
+      redirect_to @book
+    else
+      render 'new'
+    end
+  end
+end
 
   #def show
     #@books = Book.all
@@ -41,8 +60,13 @@ class BooksController < ApplicationController
 
 
   #end
-end
+
+  private
 
 
 
+   
 
+    def book_params
+      params.require(:book).permit(:title, :description, :author, :price, :user_id)
+    end

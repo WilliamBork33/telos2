@@ -1,14 +1,13 @@
 <% provide(:title, 'Index Books') %>
 <h1>Index Books</h1>
 
-
-
-
+<%= @a %>
+<%= @b.email %>
+<%= @c.title %>
 
 
 <ul class="users">
-  <%= @testbook %>
-  <%= @testbook1 %>
-  <%= @testbook2 %>
+  <%= render @book %>
 </ul>
+
 

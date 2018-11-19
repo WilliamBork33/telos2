@@ -13,9 +13,10 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   get 'books/', to: 'books#index'
-  get 'books/new'
+  get 'books/new', to: 'books#new'
   get 'books/show'
 
   resources :users
+  resources :books
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
