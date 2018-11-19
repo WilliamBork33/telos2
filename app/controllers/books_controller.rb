@@ -1,8 +1,19 @@
 class BooksController < ApplicationController
   
   def index
-    #@user = User.find(params[:id])
-    @user = User.first
+    @testbook = Book.last.title
+    @testbook1 = Book.first.title
+    @testbook2 = Book.exists?(id: [1, 4, 8])
+
+
+    #@users = User.paginate(page: params[:page])
+      #@user = User.find(params[1])
+      #@user = User.first
+    ##@books = Book.all
+    ##books = Book.all
+      #@asfd = User.find(params[:id])
+    ##@asdf = User.find_by(id: session[:user_id])
+      #@asdf = User.find_by(email: params[:name][:email])
     
   end
 
