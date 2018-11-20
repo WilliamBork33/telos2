@@ -24,6 +24,13 @@ class BooksController < ApplicationController
       render 'new'
     end
   end
+
+  def cart
+    redirect_to @book
+  end
+
+
+
 end
 
   private

@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
  
 
-  get 'cart_items/index'
-  get 'cart_items/show'
-  get 'cart_items/new'
-  get 'cart_items/create'
-  get 'cart_items/edit'
-  get 'cart_items/update'
-  get 'cart_items/destroy'
+  
   #root 'welcome#index'
   root 'static_pages#home'
   get  '/about',   to: 'static_pages#about'
@@ -24,16 +18,24 @@ Rails.application.routes.draw do
   get 'books/new', to: 'books#new'
   get 'books/show'
 
+  get 'cart_items/index'
+  get 'cart_items/show'
+  get 'cart_items/new'
+  get 'addToCart', to: "cart_items#create"
+  get 'cart_items/edit'
+  get 'cart_items/update'
+  get 'cart_items/destroy'
 
-
-  get 'carts/index'
+  get 'myCart', to: 'carts#index'
   get 'carts/show'
   get 'carts/new'
   get 'carts/create'
-  get 'carts/destroy'
-
+  get 'carts/destroy
+  '
   
   resources :users
   resources :books
+  resources :cart_items
+  resources :carts
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

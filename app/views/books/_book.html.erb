@@ -7,16 +7,18 @@
     <th>Book ID</th>
     <th>Price</th>
     <th>Date of Listing</th>
+    <th>Add to Cart</th>
   </tr>
 <% @book_list.each do |book| %> 
   <tr>
-    <td><%= book.title %></td>
+    <td><%= book.title %>
     <td><%= book.description %></td>
     <td><%= book.author %></td>
     <td><%= book.user.name %></td>
     <td><%= book.id %></td>
     <td><%= book.price %></td>
     <td><%= book.created_at.strftime("%b. %d %Y") %></td>
+    <td><%= link_to "Add", addToCart_url, method: :get, data: { confirm: "You sure?" } %></td>
   </tr>
 <% end %>
 </table>
