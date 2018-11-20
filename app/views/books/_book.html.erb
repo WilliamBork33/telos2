@@ -1,6 +1,3 @@
-
-
-
 <table class="table is-bordered is-striped is-narrow">
   <tr>
     <th>Title</th>
@@ -11,13 +8,12 @@
     <th>Price</th>
     <th>Date of Listing</th>
   </tr>
-  
-<% @users.each do |user| %> 
+<% @book_list.each do |book| %> 
   <tr>
     <td><%= book.title %></td>
     <td><%= book.description %></td>
     <td><%= book.author %></td>
-    <td><%= @user.name %></td>
+    <td><%= book.user.name %></td>
     <td><%= book.id %></td>
     <td><%= book.price %></td>
     <td><%= book.created_at.strftime("%b. %d %Y") %></td>

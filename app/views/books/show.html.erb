@@ -1,41 +1,5 @@
-<% provide(:title, @book.title) %>
-<h1>All users</h1>
-
-
-
-
-
-
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
-</div>
-
-
-<div class="col-md-8">
-    <% if @user.books.any? %>
-      <h3>Books IDs (<%= @user.books.ids %>)</h3>
-      <ol class="books">
-        <%= @user.books.ids %>
-
-        <br>
-
-        <%= @user.books.find(params[:id]) %>
-        <%= @books1 %>
-        <%= @books2 %>
-        <%= @books3 %>
-        <%= @books4 %>
-        
-      </ol>
-    <% end %>
-  </div>
-
+<% provide(:title, "New Sell") %>
+<h1>Book Submitted to Sell</h1>
 
 <table class="table is-bordered is-striped is-narrow">
   <tr>
@@ -47,15 +11,15 @@
     <th>Price</th>
     <th>Date of Listing</th>
   </tr>
-<% @user.books.each do |book| %> 
+ 
   <tr>
-    <td><%= book.title %></td>
-    <td><%= book.description %></td>
-    <td><%= book.author %></td>
-    <td><%= @user.name %></td>
-    <td><%= book.id %></td>
-    <td><%= book.price %></td>
-    <td><%= book.created_at.strftime("%b. %d %Y") %></td>
+    <td><%= @book.title %></td>
+    <td><%= @book.description %></td>
+    <td><%= @book.author %></td>
+    <td><%= @user_id %></td>
+    <td><%= @book.id %></td>
+    <td><%= @book.price %></td>
+    <td><%= @book.created_at.strftime("%b. %d %Y") %></td>
   </tr>
-<% end %>
 </table>
+
