@@ -1,0 +1,22 @@
+<table class="table is-bordered is-striped is-narrow">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Author</th>
+    <th>Seller ID</th>
+    <th>Book ID</th>
+    <th>Price</th>
+    <th>Date of Listing</th>
+  </tr>
+<% @book_list.each do |book| %> 
+  <tr>
+    <td><%= book.title %></td>
+    <td><%= book.description %></td>
+    <td><%= book.author %></td>
+    <td><%= book.user.name %></td>
+    <td><%= book.id %></td>
+    <td><%= book.price %></td>
+    <td><%= book.created_at.strftime("%b. %d %Y") %></td>
+  </tr>
+<% end %>
+</table>
