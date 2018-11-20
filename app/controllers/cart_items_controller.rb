@@ -35,6 +35,9 @@ class CartItemsController < ApplicationController
   end
 
   def destroy
+    CartItem.find(params[:id]).destroy
+    flash[:success] = "Item Removed from Cart"
+    redirect_to myCart_url
   end
 
 
