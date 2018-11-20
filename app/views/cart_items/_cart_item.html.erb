@@ -1,0 +1,22 @@
+<table class="table is-bordered is-striped is-narrow">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Author</th>
+    <th>Seller ID</th>
+    <th>Book ID</th>
+    <th>Price</th>
+    <th>Date of Listing</th>
+  </tr>
+<% @cart_item_list.each do |cart_item| %> 
+  <tr>
+    <td><%= cart_item.title %></td>
+    <td><%= cart_item.description %></td>
+    <td><%= cart_item.author %></td>
+    <td><%= cart_item.user_id %></td>
+    <td><%= cart_item.id %></td>
+    <td><%= cart_item.price %></td>
+    <td><%= cart_item.created_at.strftime("%b. %d %Y") %></td>
+  </tr>
+<% end %>
+</table>
