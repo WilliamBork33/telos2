@@ -24,7 +24,14 @@ class BooksController < ApplicationController
       render 'new'
     end
   end
-end
+
+
+  def destroy
+    Book.find(params[:id]).destroy
+    flash[:success] = "Book deleted"
+    redirect_to books_path
+  end
+
 
   private
 
@@ -32,6 +39,10 @@ end
 
    
 
-    def book_params
-      params.require(:book).permit(:title, :description, :author, :price, :user_id)
-    end
+  def book_params
+    params.require(:book).permit(:title, :description, :author, :price, :user_id)
+  end
+
+end
+
+ 

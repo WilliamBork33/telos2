@@ -9,6 +9,15 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @book = Book.all
+
+      
+    #@bu_id = current_user
+
+  
+
+
+    #@user_id = current_user.name
   end
 
   def new
@@ -75,5 +84,11 @@ class UsersController < ApplicationController
     def admin_user
       redirect_to(root_url) unless current_user.admin?
     end
+
+
+  def book_params
+    params.require(:book).permit(:title, :description, :author, :price, :user_id)
+  end
+  
 
 end

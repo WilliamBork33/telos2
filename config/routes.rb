@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   get 'books/', to: 'books#index'
   get 'books/new', to: 'books#new'
+  get 'books/show', to: 'books#index'
   get 'books/show'
 
   resources :users
