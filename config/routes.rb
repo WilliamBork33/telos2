@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'cart_items/index'
   get 'cart_items/show'
   get 'cart_items/new'
-  get 'addToCart', to: "cart_items#create"
+  get 'cart_items_create', to: 'cart_items#create'
   get 'cart_items/edit'
   get 'cart_items/update'
   get 'cart_items/destroy'

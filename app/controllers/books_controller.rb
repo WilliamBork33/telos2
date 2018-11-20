@@ -25,12 +25,6 @@ class BooksController < ApplicationController
     end
   end
 
-  def cart
-    redirect_to @book
-  end
-
-
-
 end
 
   private
