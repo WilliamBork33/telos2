@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+
+  # Associates users with their books in the database
   has_many :books
   
   # Determines default list ordering
@@ -29,5 +31,5 @@ class User < ApplicationRecord
       BCrypt::Engine.cost
       BCrypt::Password.create(string, cost: cost)
   end
-
+  
 end
