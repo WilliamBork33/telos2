@@ -37,6 +37,7 @@ textarea {
     margin-bottom: 10px;
     color: whitesmoke;
     font-size: 2em;
+    text-align: center;
   }
 }
 
@@ -54,6 +55,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
+  color: whitesmoke;
+  text-shadow: 2px 2px #000;
   font-size: 3em;
   letter-spacing: -4px;
   margin-bottom: 30px;
@@ -61,13 +64,20 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.3em;
   letter-spacing: -1px;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: left;
   font-weight: normal;
-  color: $gray-light;
+  color: lightgreen;
+  text-shadow: 1px 1px #000;
 }
+
+h3 {
+  color: whitesmoke;
+  text-shadow: 2px 2px #000;
+}
+
 
 p {
   font-size: 1.1em;
@@ -80,9 +90,7 @@ p {
   background-color: rgba(49, 28, 28, 0.6);
   padding-top: 20px;
   padding-bottom: 20px;
-
     font-size: 1.5em;
-    color: red;
     text-shadow:
       -1px -1px 0 #000,
       1px -1px 0 #000,
@@ -92,15 +100,12 @@ p {
         color: lightgreen;
         text-decoration: none;
       }
-
 }
-
-
 
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
+  font-size: 1.6em;
   color: white;
       text-shadow:
       -1px -1px 0 #000,
@@ -109,6 +114,7 @@ p {
       1px 1px 0 #000;
   text-transform: uppercase;
   letter-spacing: -1px;
+  margin-top: -5px;
   padding-top: 9px;
   font-weight: bold;
   &:hover {
@@ -116,9 +122,6 @@ p {
     text-decoration: none;
   }
 }
-
-
-
 
 
 /* footer */

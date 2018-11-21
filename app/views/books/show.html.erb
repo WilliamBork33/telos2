@@ -1,7 +1,7 @@
 <% provide(:title, "New Sell") %>
-<h1>You Submitted to Sell on the Market</h1>
-
-<table class="table is-bordered is-striped is-narrow">
+<h1>Book Added to Market</h1>
+<h2>
+<table class="table is-bordered is-striped is-narrow" style="background-color: rgba(49, 28, 28, 0.6)">
   <tr>
     <th>Title</th>
     <th>Description</th>
@@ -11,7 +11,6 @@
     <th>Price</th>
     <th>Date of Listing</th>
   </tr>
- 
   <tr>
     <td><%= @book.title %></td>
     <td><%= @book.description %></td>
@@ -22,4 +21,4 @@
     <td><%= @book.created_at.strftime("%b. %d %Y") %></td>
   </tr>
 </table>
-
+</h2>
