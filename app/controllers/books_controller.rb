@@ -29,7 +29,7 @@ class BooksController < ApplicationController
   def destroy
     Book.find(params[:id]).destroy
     flash[:success] = "Book Removed from Market"
-    redirect_to users_url
+    redirect_back(fallback_location: users_url)
   end
 
 end
