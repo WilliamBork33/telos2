@@ -19,7 +19,6 @@
     <td><%= book.price %></td>
     <td><%= book.created_at.strftime("%b. %d %Y") %></td>
     <td><%= link_to "Add", addToCart_url, method: :get, data: { confirm: "Add to Cart?" } %></td>
-  
   </tr>
 <% end %>
 </table>

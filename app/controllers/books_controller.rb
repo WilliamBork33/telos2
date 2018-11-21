@@ -3,10 +3,11 @@ class BooksController < ApplicationController
   def index
     #@user_id = User.all
     @book_list = Book.all
+    #@user_id = current_user.name
   end
 
   def show
-    #@user = User.find(params[:id])
+    @user = User.find(params[:id])
     @book = Book.find(params[:id])
     @user_id = current_user.name
   end
@@ -37,7 +38,9 @@ end
   private
 
 
-
+  def user_params
+    params.require(:user).permit(:name, :email, :address, :phone, :password, :password_confirmation)
+  end
    
 
     def book_params

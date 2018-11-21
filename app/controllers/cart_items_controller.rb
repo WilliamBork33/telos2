@@ -41,7 +41,6 @@ class CartItemsController < ApplicationController
   end
 
 
-
   private
     def book_params
       params.require(:book).permit(:title, :description, :author, :price, :user_id)
