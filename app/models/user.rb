@@ -1,7 +1,10 @@
 class User < ApplicationRecord
   has_many :books
   
-  #Before saving, change new user email to lowercase
+  # Determines default list ordering
+  default_scope -> { order(created_at: :desc) }
+
+  # Before saving, change new user email to lowercase
   before_save { self.email = email.downcase }
 
   # Validate that email is in example@example.com format

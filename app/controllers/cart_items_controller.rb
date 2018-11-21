@@ -16,8 +16,8 @@ class CartItemsController < ApplicationController
     @book_list = Book.all
 
     @cart_item = CartItem.new()
-    @cart_item.user_id = current_user.id
-    @cart_item.title = @book_list.count
+    #@cart_item.user_id = current_user.id
+    #@cart_item.title = @book_list.count
   
     if @cart_item.save
       redirect_to myCart_path
@@ -35,6 +35,9 @@ class CartItemsController < ApplicationController
   end
 
   def destroy
+    CartItem.find(params[:id]).destroy
+    flash[:success] = "Item Removed from Cart"
+    redirect_to myCart_url
   end
 
 

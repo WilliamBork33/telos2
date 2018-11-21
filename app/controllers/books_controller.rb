@@ -25,11 +25,12 @@ class BooksController < ApplicationController
     end
   end
 
-  def cart
-    redirect_to @book
+
+  def destroy
+    Book.find(params[:id]).destroy
+    flash[:success] = "Book Removed from Market"
+    redirect_back(fallback_location: users_url)
   end
-
-
 
 end
 
