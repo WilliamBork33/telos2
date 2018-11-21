@@ -9,23 +9,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
-    #@books = @user.books.paginate(page: params[:page])
-    
-    #@bl = Book.find(params[:id]
-
-    #@user_id = current_user.id
-
-    #@book_list = Book.all
-    #@current_user_id = @user.id
-    
-    #@current_user = current_user.id
-    #@user = User.find(params[:id])
-    #@book = Book.find(:user_id: params[:user_id])
-    #@book_list = User.books.find_by(2)
-    #Book.find_by(user_id: @current_user)
-
-
   end
 
   def new

@@ -1,6 +1,6 @@
 <%= form_for(@user) do |f| %>
-    
       <%= render 'shared/error_messages' %>
+      <h3>
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
@@ -23,4 +23,6 @@
       <br>
       
       <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+      
+      </h3>
     <% end %>

@@ -1,5 +1,13 @@
 <% provide(:title, "About") %>
-<h1>About</h1>
-<p>
-  This is the About Page.
-</p>
+<div class="center jumbotron">
+  <h1>About</h1>
+  <h2>
+    Ruby on Rails Bookstore is an online peer-to-peer book market.
+    <br>
+    Create an account to buy and sell books both new and old.
+    <br>
+    Happy reading!
+  </h2>
+  <br>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>

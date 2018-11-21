@@ -1,4 +1,4 @@
-<table class="table is-bordered is-striped is-narrow">
+<table class="table is-bordered is-striped is-narrow" style="background-color: rgba(49, 28, 28, 0.6)">
   <tr>
     <th>Title</th>
     <th>Description</th>
@@ -19,7 +19,6 @@
     <td><%= book.price %></td>
     <td><%= book.created_at.strftime("%b. %d %Y") %></td>
     <td><%= link_to "Add", addToCart_url, method: :get, data: { confirm: "Add to Cart?" } %></td>
-  
   </tr>
 <% end %>
 </table>

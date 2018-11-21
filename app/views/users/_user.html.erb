@@ -1,9 +1,21 @@
-<li>
-  <%= link_to user.name, user %>
-  <%= user.email %>
-  <%= user.address %>
-  <%= user.phone %>
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete, data: { confirm: "You sure?" } %>
+<table class="table is-bordered is-striped is-narrow">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>User Since</th>
+  </tr>
+<% @users.each do |user| %> 
+  <tr>
+    <td><%= link_to user.name, user %></td>
+    <td><%= user.email %></td>
+    <td><%= user.address %></td>
+    <td><%= user.phone %></td>
+    <td><%= user.created_at.strftime("%b. %d %Y") %></td>
+    <td><% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", user, method: :delete, data: { confirm: "You sure you want to delete this user?" } %></td>
   <% end %>
-</li>
+  </tr>
+<% end %>
+</table>
